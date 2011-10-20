@@ -1,7 +1,53 @@
 !!!
 %html
   %head
-    %title Sample
+    %title Bootstrap
     %link{:href => '/assets/site.css', :rel => 'stylesheet', :type=>"text/css"}
+    %script{:src => '/assets/application.js', :type=>"text/javascript"}
   %body
-    !=yield
+    .topbar-wrapper{:style => "z-index: 5;"}
+      .topbar{"data-dropdown" => "dropdown"}
+        .topbar-inner
+          .container
+            %h3
+              %a{:href => "#"} Project Name
+            %ul.nav
+              %li.active
+                %a{:href => "#"} Home
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+              %li.dropdown
+                %a.dropdown-toggle{:href => "#"} Dropdown
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Secondary link
+                  %li
+                    %a{:href => "#"} Something else here
+                  %li.divider
+                  %li
+                    %a{:href => "#"} Another link
+            %form.pull-left{:action => ""}
+              %input{:placeholder => "Search", :type => "text"}/
+            %ul.nav.secondary-nav
+              %li.dropdown
+                %a.dropdown-toggle{:href => "#"} Dropdown
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Secondary link
+                  %li
+                    %a{:href => "#"} Something else here
+                  %li.divider
+                  %li
+                    %a{:href => "#"} Another link
+    .container
+      !=yield
+    %footer.footer
+      .container
+        .pull-right
+          %p 
+            Utvecklat av 
+            %a{:href=>'http://www.mon7.se/'} Mon 7 Consulting AB
