@@ -1,0 +1,9 @@
+*~
+*.swp
+.bundle
+capybara*
+*.rbc
+*.swo
+*.rdb
+.DS_Store
+tmp/
