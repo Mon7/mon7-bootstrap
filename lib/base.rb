@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/reloader'
 require 'haml'
 
 class Base < Sinatra::Base
@@ -7,5 +8,8 @@ class Base < Sinatra::Base
   before do
     content_type :html, :charset => 'utf-8'
     set :haml, :layout => false if request['X-PJAX']
+  end
+  configure :development do
+    register Sinatra::Reloader
   end
 end
