@@ -16,6 +16,7 @@ gem 'less'
 #gem "mail"
 
 #gem 'pg'
+#gem 'pg-migrator'
 #gem 'datamapper'
 #gem 'dm-postgres-adapter'
 #gem "dm-sweatshop"
