@@ -7,7 +7,7 @@ task :environment do
 end
 
 task :console do
-	exec "pry -r ./config/environment -r ./lib/models"
+	exec "irb -r ./config/environment -r ./lib/models"
 end
 
 begin
@@ -20,3 +20,31 @@ begin
 rescue LoadError
 end
 
+namespace :assets do
+  desc 'Precompile assets'
+  task :precompile do
+    require 'coffee_script'
+    require 'sprockets'
+    require 'sprockets-urlrewriter'
+    require 'uglifier'
+    env = Sprockets::Environment.new
+    env.append_path 'assets/js'
+    env.append_path 'assets/css'
+    env.append_path 'vendor/assets'
+    env.js_compressor = Uglifier.new
+    env.register_preprocessor 'text/css', Sprockets::UrlRewriter
+    Dir.mkdir './public/assets' unless Dir.exists? './public/assets'
+    File.open('./public/assets/site.css', 'w') { |f| f.write env['site.css']}
+    File.open('./public/assets/application.js', 'w') { |f| f.write env['application.js']}
+
+    Dir['assets/**/*.{png,jpg,gif}'].each do |i| 
+      path = i.sub(/^\w*\/\w*\/(.*)$/, 'public/assets/\1') 
+      FileUtils.mkdir_p File.dirname path
+      FileUtils.cp i, path
+    end
+  end
+
+  task :clean do
+    FileUtils.rm_rf 'public/assets'
+  end
+end
