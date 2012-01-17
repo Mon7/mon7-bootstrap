@@ -1,4 +1,4 @@
-//=require jquery/jquery-1.6.4.js
+//=require jquery/jquery-1.7.1.js
 //=require twitter-bootstrap/js/bootstrap-alerts.js
 //=require twitter-bootstrap/js/bootstrap-dropdown.js
 //=require twitter-bootstrap/js/bootstrap-modal.js
