@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rack', '<1.4.0'
+gem 'rack'
 gem 'rake'
 gem 'sinatra'
 gem 'sinatra-contrib'
