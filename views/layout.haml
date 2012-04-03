@@ -7,12 +7,11 @@
     %link{:href => '/assets/site.css', :rel => 'stylesheet', :type=>"text/css"}
     %script{:src => '/assets/application.js', :type=>"text/javascript"}
   %body
-    .topbar-wrapper{:style => "z-index: 5;"}
-      .topbar{"data-dropdown" => "dropdown"}
-        .topbar-inner
-          .container
-            %h3
-              %a{:href => "#"} Project Name
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand Mon 7 Bootstrap
+          .nav-collapse
             %ul.nav
               %li.active
                 %a{:href => "#"} Home
@@ -32,11 +31,11 @@
                   %li.divider
                   %li
                     %a{:href => "#"} Another link
-            %form.pull-left{:action => ""}
-              %input{:placeholder => "Search", :type => "text"}/
-            %ul.nav.secondary-nav
+            %ul.nav.pull-right
               %li.dropdown
-                %a.dropdown-toggle{:href => "#"} Dropdown
+                %a.dropdown-toggle{:href => "#", :'data-toggle'=> :dropdown}
+                  Dropdown
+                  %b.caret
                 %ul.dropdown-menu
                   %li
                     %a{:href => "#"} Secondary link
