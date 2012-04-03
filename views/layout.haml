@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %title Bootstrap
+    %title
+      = "#{@title} - " if @title
+      Bootstrap
     %link{:href => '/assets/site.css', :rel => 'stylesheet', :type=>"text/css"}
     %script{:src => '/assets/application.js', :type=>"text/javascript"}
   %body
@@ -48,6 +50,6 @@
     %footer.footer
       .container
         .pull-right
-          %p 
-            Utvecklat av 
+          %p
+            Utvecklat av
             %a{:href=>'http://www.mon7.se/'} Mon 7 Consulting AB
