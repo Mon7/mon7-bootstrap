@@ -7,12 +7,11 @@
     %link{:href => '/assets/site.css', :rel => 'stylesheet', :type=>"text/css"}
     %script{:src => '/assets/application.js', :type=>"text/javascript"}
   %body
-    .topbar-wrapper{:style => "z-index: 5;"}
-      .topbar{"data-dropdown" => "dropdown"}
-        .topbar-inner
+    .navbar-wrapper{:style => "z-index: 5;"}
+      .navbar.navbar-fixed-top
+        .navbar-inner
           .container
-            %h3
-              %a{:href => "#"} Project Name
+            %a.brand{:href => "/"} Project Name
             %ul.nav
               %li.active
                 %a{:href => "#"} Home
@@ -23,26 +22,32 @@
               %li
                 %a{:href => "#"} Link
               %li.dropdown
-                %a.dropdown-toggle{:href => "#"} Dropdown
+                %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+                  Dropdown
+                  %b.caret
                 %ul.dropdown-menu
                   %li
                     %a{:href => "#"} Secondary link
                   %li
                     %a{:href => "#"} Something else here
                   %li.divider
+                  %li.nav-header Nav Header
                   %li
                     %a{:href => "#"} Another link
-            %form.pull-left{:action => ""}
-              %input{:placeholder => "Search", :type => "text"}/
-            %ul.nav.secondary-nav
+            %form.navbar-search.pull-left{:action => ""}
+              %input.search-query{:placeholder => "Search", :type => "text"}
+            %ul.nav.pull-right
               %li.dropdown
-                %a.dropdown-toggle{:href => "#"} Dropdown
+                %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+                  Dropdown
+                  %b.caret
                 %ul.dropdown-menu
                   %li
                     %a{:href => "#"} Secondary link
                   %li
                     %a{:href => "#"} Something else here
                   %li.divider
+                  %li.nav-header Nav Header
                   %li
                     %a{:href => "#"} Another link
     .container
