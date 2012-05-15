@@ -108,6 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  closure-compiler
   coffee-script
   cucumber
   growl
@@ -125,5 +126,7 @@ DEPENDENCIES
   sprockets
   sprockets-urlrewriter
   therubyracer
+  therubyrhino
   thin
+  trinidad
   uglifier

@@ -5,7 +5,8 @@ gem 'rake'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'haml'
-gem 'thin'
+gem 'thin', :platforms => :ruby
+gem 'trinidad', :platforms => :jruby
 #gem 'mail'
 #gem 'datamapper'
 #gem 'dm-postgres-adapter'
@@ -24,8 +25,10 @@ group :development do
 
   gem 'sprockets'
   gem 'sprockets-urlrewriter'
-  gem 'uglifier'
-  gem 'therubyracer'
+  gem 'uglifier', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
+  gem 'closure-compiler', :platforms => :jruby
+  gem 'therubyrhino', :platforms => :jruby
   gem 'coffee-script'
 end
 
