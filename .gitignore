@@ -8,3 +8,4 @@ capybara*
 .DS_Store
 tmp/
 public/assets
+log/
