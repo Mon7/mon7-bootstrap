@@ -7,6 +7,7 @@
 #require 'dm-aggregates'
 #require 'dm-transactions'
 #require 'dm-constraints'
+require './lib/string.rb'
 
 #DataMapper::Property::String.length(255)
 Dir["./lib/models/*.rb"].each { |file| require file }
