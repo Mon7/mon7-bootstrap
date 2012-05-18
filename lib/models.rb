@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 #require 'dm-core'
 #require 'dm-types'
 #require 'dm-serializer'
