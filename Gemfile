@@ -14,6 +14,13 @@ gem 'trinidad', :platforms => :jruby
 #gem 'randexp'
 #gem 'resque'
 #gem 'pdfkit'
+gem 'sprockets'
+gem 'sprockets-urlrewriter'
+gem 'uglifier', :platforms => :ruby
+gem 'therubyracer', :platforms => :ruby
+gem 'closure-compiler', :platforms => :jruby
+gem 'therubyrhino', :platforms => :jruby
+gem 'coffee-script'
 
 group :development do
   gem 'guard'
@@ -22,14 +29,6 @@ group :development do
   gem 'growl', :require => false #mac
   gem 'guard-rspec'
   gem 'launchy'
-
-  gem 'sprockets'
-  gem 'sprockets-urlrewriter'
-  gem 'uglifier', :platforms => :ruby
-  gem 'therubyracer', :platforms => :ruby
-  gem 'closure-compiler', :platforms => :jruby
-  gem 'therubyrhino', :platforms => :jruby
-  gem 'coffee-script'
 end
 
 group :test do
