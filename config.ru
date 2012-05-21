@@ -12,7 +12,7 @@ if ENV['RACK_ENV'] == 'development'
     s.append_path 'assets/css'
     s.append_path 'assets/js'
     s.append_path 'vendor/assets'
-    s.js_compressor = Uglifier.new 
+    s.js_compressor = Uglifier.new
     s.register_preprocessor 'text/css', Sprockets::UrlRewriter
     s.cache = Sprockets::Cache::FileStore.new("tmp")
     run s
@@ -22,9 +22,9 @@ end
 map '/' do
   use Rack::Static, {
     :root => "public",
-    :urls => ["/images", "/fonts", "/favicon.ico", "/robots.txt"],
+    :urls => ["/images", "/fonts", "/favicon.ico", "/robots.txt", "/assets"],
     :cache_control => "public,max-age=#{365 * 24 * 3600}"
-  } if ENV['RACK_ENV'] == 'development'
+  }
   use Rack::Session::Cookie, :secret => ENV['SESSION_SECRET'], :expire_after =>  24 * 3600
   use Rack::MethodOverride
 
