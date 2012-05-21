@@ -20,8 +20,8 @@ group :development do
   gem 'rb-inotify', :require => false #linux
   gem 'rb-fsevent', :require => false #mac
   gem 'growl', :require => false #mac
-	gem 'guard-rspec'
-	gem 'launchy'
+  gem 'guard-rspec'
+  gem 'launchy'
 
   gem 'sprockets'
   gem 'sprockets-urlrewriter'
@@ -33,7 +33,7 @@ group :development do
 end
 
 group :test do
-	gem 'rspec'
-	gem 'capybara'
+  gem 'rspec'
+  gem 'capybara'
   gem 'cucumber'
 end
