@@ -51,7 +51,28 @@
                   %li
                     %a{:href => "#"} Another link
     .container
-      !=yield
+      .row-fluid
+        .span12
+          -if flash[:success]
+            .alert.alert-success
+              %a.close{ :href => "#", :data => {:dismiss => "alert" } } x
+              != flash[:success]
+          -if flash[:info]
+            .alert.alert-info
+              %a.close{ :href => "#", :data => {:dismiss => "alert" } } x
+              != flash[:info]
+          -if flash[:warning]
+            .alert
+              %a.close{ :href => "#", :data => {:dismiss => "alert" } } x
+              != flash[:warning]
+          -if flash[:error]
+            .alert.alert-error
+              %a.close{ :href => "#", :data => {:dismiss => "alert" } } x
+              != flash[:error]
+          %noscript
+            .alert.alert-error
+              Din webläsare måste tillåta Javascript för att sidan skall fungera korrekt!
+          !=yield
     %footer.footer
       .container
         .pull-right

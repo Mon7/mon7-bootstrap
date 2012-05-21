@@ -4,6 +4,7 @@ gem 'rack'
 gem 'rake'
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-flash'
 gem 'haml'
 gem 'thin', :platforms => :ruby
 gem 'trinidad', :platforms => :jruby
