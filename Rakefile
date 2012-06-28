@@ -22,7 +22,7 @@ end
 
 namespace :assets do
   desc 'Precompile assets'
-  task :precompile do
+  task :precompile => :clean do
     require 'coffee_script'
     require 'sprockets'
     require 'sprockets-urlrewriter'
@@ -37,7 +37,7 @@ namespace :assets do
     File.open('./public/assets/site.css', 'w') { |f| f.write env['site.css']}
     File.open('./public/assets/application.js', 'w') { |f| f.write env['application.js']}
 
-    Dir['assets/**/*.{png,jpg,gif}'].each do |i| 
+    Dir['{vendor,.}/assets/**/*.{png,jpg,gif}'].each do |i| 
       path = i.sub(/^\w*\/\w*\/(.*)$/, 'public/assets/\1') 
       FileUtils.mkdir_p File.dirname path
       FileUtils.cp i, path
