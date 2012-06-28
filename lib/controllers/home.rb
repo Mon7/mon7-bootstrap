@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require './lib/controllers/base'
 
 class HomeController < BaseController

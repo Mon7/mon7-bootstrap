@@ -1,16 +1,17 @@
 !!!
 %html
   %head
-    %title Bootstrap
+    %title
+      = "#{@title} - " if @title
+      Bootstrap
     %link{:href => '/assets/site.css', :rel => 'stylesheet', :type=>"text/css"}
     %script{:src => '/assets/application.js', :type=>"text/javascript"}
   %body
-    .topbar-wrapper{:style => "z-index: 5;"}
-      .topbar{"data-dropdown" => "dropdown"}
-        .topbar-inner
+    .navbar-wrapper{:style => "z-index: 5;"}
+      .navbar.navbar-fixed-top
+        .navbar-inner
           .container
-            %h3
-              %a{:href => "#"} Project Name
+            %a.brand{:href => "/"} Project Name
             %ul.nav
               %li.active
                 %a{:href => "#"} Home
@@ -21,33 +22,60 @@
               %li
                 %a{:href => "#"} Link
               %li.dropdown
-                %a.dropdown-toggle{:href => "#"} Dropdown
+                %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+                  Dropdown
+                  %b.caret
                 %ul.dropdown-menu
                   %li
                     %a{:href => "#"} Secondary link
                   %li
                     %a{:href => "#"} Something else here
                   %li.divider
+                  %li.nav-header Nav Header
                   %li
                     %a{:href => "#"} Another link
-            %form.pull-left{:action => ""}
-              %input{:placeholder => "Search", :type => "text"}/
-            %ul.nav.secondary-nav
+            %form.navbar-search.pull-left{:action => ""}
+              %input.search-query{:placeholder => "Search", :type => "text"}
+            %ul.nav.pull-right
               %li.dropdown
-                %a.dropdown-toggle{:href => "#"} Dropdown
+                %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+                  Dropdown
+                  %b.caret
                 %ul.dropdown-menu
                   %li
                     %a{:href => "#"} Secondary link
                   %li
                     %a{:href => "#"} Something else here
                   %li.divider
+                  %li.nav-header Nav Header
                   %li
                     %a{:href => "#"} Another link
     .container
-      !=yield
+      .row-fluid
+        .span12
+          -if flash[:success]
+            .alert.alert-success
+              %a.close{ :href => "#", :data => {:dismiss => "alert" } } x
+              != flash[:success]
+          -if flash[:info]
+            .alert.alert-info
+              %a.close{ :href => "#", :data => {:dismiss => "alert" } } x
+              != flash[:info]
+          -if flash[:warning]
+            .alert
+              %a.close{ :href => "#", :data => {:dismiss => "alert" } } x
+              != flash[:warning]
+          -if flash[:error]
+            .alert.alert-error
+              %a.close{ :href => "#", :data => {:dismiss => "alert" } } x
+              != flash[:error]
+          %noscript
+            .alert.alert-error
+              Din webläsare måste tillåta Javascript för att sidan skall fungera korrekt!
+          !=yield
     %footer.footer
       .container
         .pull-right
-          %p 
-            Utvecklat av 
+          %p
+            Utvecklat av
             %a{:href=>'http://www.mon7.se/'} Mon 7 Consulting AB

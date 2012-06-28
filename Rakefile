@@ -6,8 +6,11 @@ task :environment do
 	require "./lib/models"
 end
 
-task :console do
-	exec "irb -r ./config/environment -r ./lib/models"
+begin
+  desc 'Interactive console'
+  task :console do
+    exec "irb -r ./config/environment -r ./lib/models"
+  end
 end
 
 begin

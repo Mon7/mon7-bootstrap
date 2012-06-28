@@ -1,9 +1,13 @@
+# encoding: utf-8
+
 require 'sinatra/base'
 require 'haml'
 
 class BaseController < Sinatra::Base
-  set :views => lambda { "views/#{self.name[0..-11].downcase}" }
+  set :views => lambda { "views/#{self.name[0..-11].underscore}" }
   set :haml, :layout => :'/../layout', :format => :html5, :escape_html => true
+
+  register Sinatra::Flash
 
   before do
     content_type :html, :charset => 'utf-8'
