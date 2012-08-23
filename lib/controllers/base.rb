@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'sinatra/base'
+require 'sinatra/flash'
 require 'haml'
 
 class BaseController < Sinatra::Base
