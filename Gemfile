@@ -30,6 +30,7 @@ group :development do
   gem 'growl', :require => false #mac
   gem 'guard-rspec'
   gem 'launchy'
+  gem 'foreman'
 end
 
 group :test do
