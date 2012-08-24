@@ -6,22 +6,21 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-flash'
 gem 'haml'
-gem 'thin', :platforms => :ruby
-gem 'trinidad', :platforms => :jruby
-#gem 'mail'
-#gem 'datamapper'
-#gem 'dm-postgres-adapter'
-#gem 'dm-sweatshop'
-#gem 'randexp'
-#gem 'resque'
-#gem 'pdfkit'
 gem 'sprockets'
 gem 'sprockets-urlrewriter'
-gem 'uglifier', :platforms => :ruby
-gem 'therubyracer', :platforms => :ruby
-gem 'closure-compiler', :platforms => :jruby
-gem 'therubyrhino', :platforms => :jruby
 gem 'coffee-script'
+
+platforms :jruby do
+  gem 'trinidad'
+  gem 'closure-compiler'
+  gem 'therubyrhino'
+end
+
+platforms :ruby do
+  gem 'thin'
+  gem 'uglifier'
+  gem 'therubyracer'
+end
 
 group :development do
   gem 'guard'
