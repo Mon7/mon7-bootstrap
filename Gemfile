@@ -30,6 +30,8 @@ group :development do
   gem 'guard-rspec'
   gem 'launchy'
   gem 'foreman'
+  gem 'debugger', :platforms => :ruby
+  gem 'racksh'
 end
 
 group :test do
