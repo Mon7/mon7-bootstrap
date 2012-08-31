@@ -2,8 +2,8 @@ require 'bundler/setup'
 Dir["./tasks/**/*.rake"].each { |f| load f }
 
 task :environment do
-	require "./config/environment"
-	require "./lib/models"
+  require "./config/environment"
+  require "./lib/models"
 end
 
 begin
@@ -40,8 +40,8 @@ namespace :assets do
     File.open('./public/assets/site.css', 'w') { |f| f.write env['site.css']}
     File.open('./public/assets/application.js', 'w') { |f| f.write env['application.js']}
 
-    Dir['{vendor,.}/assets/**/*.{png,jpg,gif}'].each do |i| 
-      path = i.sub(/^\w*\/\w*\/(.*)$/, 'public/assets/\1') 
+    Dir['{vendor,.}/assets/**/*.{png,jpg,gif}'].each do |i|
+      path = i.sub(/^\w*\/\w*\/(.*)$/, 'public/assets/\1')
       FileUtils.mkdir_p File.dirname path
       FileUtils.cp i, path
     end
