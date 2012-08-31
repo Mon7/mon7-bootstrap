@@ -5,7 +5,7 @@ require 'sinatra/flash'
 require 'haml'
 
 class BaseController < Sinatra::Base
-  set :views => lambda { "views/#{self.name[0..-11].underscore}" }
+  set :views => lambda { "views/#{StringExtension.underscore(self.name[0..-11])}" }
   set :haml, :layout => :'/../layout', :format => :html5, :escape_html => true
 
   register Sinatra::Flash
