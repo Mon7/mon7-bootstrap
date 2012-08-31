@@ -1,6 +1,7 @@
 require 'bundler/setup'
 require './config/environment'
 require './lib/controllers'
+require './lib/services'
 
 if ENV['RACK_ENV'] == 'development'
   require 'sprockets'

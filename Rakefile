@@ -4,6 +4,7 @@ Dir["./tasks/**/*.rake"].each { |f| load f }
 task :environment do
   require "./config/environment"
   require "./lib/models"
+  require './lib/services'
 end
 
 begin
