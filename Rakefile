@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'bundler/setup'
 Dir["./tasks/**/*.rake"].each { |f| load f }
 
